@@ -53,7 +53,7 @@ object oscaraward {
       .config("spark.LogLevel", "ERROR")
       .getOrCreate()
 
-    val filepath = "L:/hadoop/datasets/"
+    val filepath = "hdfs:///hadoop/datasets/"
     val oscardata = spark.read.option("header", "true")
       .option("inferSchema", "true")
       .csv(filepath + "Oscars-demographics-DFE.csv")
